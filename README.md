@@ -1,7 +1,7 @@
 # smilevue
 
 > A Vue.js project
-学习JSpang 的Vue2.x Vant + Koa2 + MongoDB 移动端电商项目；
+学习JSpang 的Vue2.x + Vant + Koa2 + MongoDB 移动端电商项目；
 
 
 ## Build Setup
