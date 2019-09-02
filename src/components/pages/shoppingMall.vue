@@ -64,7 +64,7 @@
           <van-list>
             <van-row gutter="20">
               <van-col span="12" v-for="(item, index) in hotGoods" :key="index">
-                <goods-info-component :goodsImage="item.image" :goodsName="item.name" :goodsPrice="item.price"></goods-info-component>
+                <goods-info :goodsId="item.goodsId" :goodsImage="item.image" :goodsName="item.name" :goodsPrice="item.price"></goods-info>
               </van-col>
             </van-row>
           </van-list>
@@ -79,9 +79,9 @@
   import { swiper,swiperSlide } from 'vue-awesome-swiper';
 
   import floorComponent from '../component/floorComponent';
-  import goodsInfoComponent from '../component/goodsInfoComponent';
+  import goodsInfo from '../component/goodsInfoComponent';
   import { toMoney } from '@/filter/moneyFilter.js'
-  import url from '@/serviceAPI.cofig.js'
+  import url from '@/serviceAPI.config.js'
 
   export default {
     data() {
@@ -105,7 +105,7 @@
       swiper,
       swiperSlide,
       floorComponent,
-      goodsInfoComponent
+      goodsInfo,
     },
     created() {
       axios({
@@ -113,7 +113,7 @@
           method: 'get'
         })
         .then(res => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.status == 200) {
             this.category = res.data.data.category;
             this.adBanner = res.data.data.advertesPicture.PICTURE_ADDRESS;
